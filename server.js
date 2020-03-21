@@ -49,20 +49,20 @@ app.post("/api/notes", function (req, res) {
   })
 });
 
-app.delete('/api/notes/:noteId', function (req, res) {
-  const id = req.params.noteId
-  fs.readFile(__dirname + "/noteTaker_db.json", (err, data) => {
-    if (err) throw err
-    const notes = JSON.parse(data)
+// app.delete('/api/notes/:noteId', function (req, res) {
+//   const id = req.params.noteId
+//   fs.readFile(__dirname + "/noteTaker_db.json", (err, data) => {
+//     if (err) throw err
+//     const notes = JSON.parse(data)
 
 
-    fs.writeFile(__dirname + "/noteTaker_db.json", JSON.stringify(notes), (err, data) => {
-      if (err) throw err
-      res.json(newNote);
-    })
-  })
-  res.send('ok')
-})
+//     fs.writeFile(__dirname + "/noteTaker_db.json", JSON.stringify(notes), (err, data) => {
+//       if (err) throw err
+//       res.json(newNote);
+//     })
+//   })
+//   res.send('ok')
+// })
 
 app.get("*", function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
