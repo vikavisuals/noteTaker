@@ -32,8 +32,8 @@ connection.connect(function (err) {
 app.use(express.static('public'));
 
 // GET index HTML
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + 'public/index.html');
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 // GET notes HTML
@@ -64,19 +64,19 @@ app.post("/api/notes", function (req, res) {
 
 
 // Deletes a note by ID, not working right now
-app.delete('/api/notes/:noteId', function (req, res) {
-  const id = req.params.noteId;
-  fs.readFile(__dirname + "/noteTaker_db.json", (err, data) => {
-    if (err) throw err
-    const notes = JSON.parse(data)
+// app.delete('/api/notes/:noteId', function (req, res) {
+//   const id = req.params.noteId
+//   fs.readFile(__dirname + "/noteTaker_db.json", (err, data) => {
+//     if (err) throw err
+//     const notes = JSON.parse(data)
 
-    fs.writeFile(__dirname + "/noteTaker_db.json", JSON.stringify(notes), (err, data) => {
-      if (err) throw err
-      res.json(note);
-    })
-  })
-  res.send('ok')
-})
+//     fs.writeFile(__dirname + "/noteTaker_db.json", JSON.stringify(notes), (err, data) => {
+//       if (err) throw err
+//       res.json(newNote);
+//     })
+//   })
+//   res.send('ok')
+// })
 
 // Express listening for port
 app.listen(PORT);
