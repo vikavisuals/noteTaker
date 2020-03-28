@@ -19,4 +19,4 @@ A simple note taking application, allowing for new notes to be written, viewed a
 - Realizing how important file structure is, and how to properly read errors that popped up.
 
 ## Screenshot
-![Screenshot](https://github.com/vkaszuba/05-weatherDashboard/blob/master/images/weatherDashboardScreenshot.JPG)
+![Screenshot](https://github.com/vkaszuba/noteTaker/blob/master/Images/noteTaker.JPG)
